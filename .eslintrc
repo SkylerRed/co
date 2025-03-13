@@ -1,0 +1,255 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"jsx": true,
+		"useJSXTextNode": true
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"extends": [
+		"standard",
+		"standard-react"
+	],
+	"plugins": [
+		"@typescript-eslint",
+		"sort-destructure-keys",
+		"import"
+	],
+	"globals": {
+		"wx": "readonly",
+		"_": "readonly",
+		"Raven": "readonly",
+		"QLPlayer": "readonly",
+		"VConsole": "readonly",
+		"NodeJS": true
+	},
+	"env": {
+		"browser": true,
+		"node": true,
+		"jasmine": true
+	},
+	"rules": {
+		"semi": "off",
+		"jsx-quotes": [
+			"error",
+			"prefer-double"
+		],
+		"comma-dangle": [
+			"error",
+			"always-multiline"
+		],
+		"operator-linebreak": [
+			"error",
+			"before",
+			{
+				"overrides": {
+					"=": "none"
+				}
+			}
+		],
+		"space-before-function-paren": [
+			"error",
+			{
+				"anonymous": "always",
+				"named": "never",
+				"asyncArrow": "always"
+			}
+		],
+		"sort-imports": [
+			"error",
+			{
+				"ignoreCase": true,
+				"ignoreDeclarationSort": true,
+				"ignoreMemberSort": false,
+				"memberSyntaxSortOrder": [
+					"none",
+					"all",
+					"multiple",
+					"single"
+				],
+				"allowSeparatedGroups": false
+			}
+		],
+		"import/order": [
+			"error",
+			{
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				},
+				"newlines-between": "never",
+				"groups": [
+					"builtin",
+					"external",
+					"internal",
+					[
+						"sibling",
+						"parent"
+					],
+					"index",
+					"object",
+					"type"
+				],
+				"pathGroups": [
+					{
+						"pattern": "@/**",
+						"group": "internal"
+					}
+				],
+				"pathGroupsExcludedImportTypes": [
+					"builtin",
+					"react"
+				]
+			}
+		],
+		"sort-destructure-keys/sort-destructure-keys": [
+			"error",
+			{
+				"caseSensitive": false
+			}
+		],
+		"object-property-newline": [
+			"error",
+			{
+				"allowAllPropertiesOnSameLine": true
+			}
+		],
+		"react/prop-types": "off",
+		"react/jsx-no-bind": "off",
+		"react/no-did-update-set-state": "off",
+		"react/jsx-fragments": [
+			"error",
+			"syntax"
+		],
+		"react/jsx-wrap-multilines": [
+			"error",
+			{
+				"declaration": "parens-new-line"
+			}
+		],
+		"handle-callback-err": "off",
+		"camelcase": "off",
+		"no-tabs": "off",
+		"standard/no-callback-literal": "off",
+		"react/jsx-handler-names": "off",
+		"no-use-before-define": "off"
+	},
+	"overrides": [
+		{
+			"files": [
+				"*.ts",
+				"*.tsx"
+			],
+			"rules": {
+				"indent": "off",
+				"no-useless-escape": "off",
+				"no-use-before-define": "off",
+				"@typescript-eslint/semi": "error",
+				"@typescript-eslint/consistent-type-imports": [
+					"error",
+					{
+						"prefer": "type-imports",
+						"fixStyle": "separate-type-imports",
+						"disallowTypeAnnotations": false
+					}
+				],
+				"@typescript-eslint/space-infix-ops": [
+					"error",
+					{
+						"int32Hint": false
+					}
+				],
+				"@typescript-eslint/indent": [
+					"error",
+					"tab",
+					{
+						"SwitchCase": 1,
+						"ignoredNodes": [
+							"TSTypeParameterInstantiation"
+						],
+						"VariableDeclarator": 2,
+						"MemberExpression": 1,
+						"ArrayExpression": 1,
+						"ObjectExpression": 1,
+						"ImportDeclaration": 1,
+						"flatTernaryExpressions": false,
+						"ignoreComments": false,
+						"outerIIFEBody": 1,
+						"CallExpression": {
+							"arguments": "first"
+						},
+						"StaticBlock": {
+							"body": 1
+						},
+						"FunctionDeclaration": {
+							"parameters": 1,
+							"body": 1
+						},
+						"FunctionExpression": {
+							"parameters": "first",
+							"body": 1
+						}
+					}
+				],
+				"@typescript-eslint/class-name-casing": [
+					"off"
+				],
+				"@typescript-eslint/type-annotation-spacing": [
+					"error"
+				],
+				"no-unused-vars": "off",
+				"@typescript-eslint/no-unused-vars": [
+					"error",
+					{
+						"vars": "all",
+						"args": "after-used",
+						"ignoreRestSiblings": false
+					}
+				],
+				"func-call-spacing": "off",
+				"@typescript-eslint/func-call-spacing": [
+					"error"
+				],
+				"import/export": "off",
+				"@typescript-eslint/member-delimiter-style": [
+					"error",
+					{
+						"multiline": {
+							"delimiter": "none",
+							"requireLast": true
+						},
+						"singleline": {
+							"delimiter": "comma",
+							"requireLast": false
+						},
+						"overrides": {
+							"interface": {
+								"multiline": {
+									"delimiter": "semi",
+									"requireLast": true
+								},
+								"singleline": {
+									"delimiter": "semi",
+									"requireLast": true
+								}
+							},
+							"typeLiteral": {
+								"multiline": {
+									"delimiter": "semi",
+									"requireLast": true
+								},
+								"singleline": {
+									"delimiter": "semi",
+									"requireLast": true
+								}
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}

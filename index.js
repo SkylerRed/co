@@ -47,7 +47,7 @@ function co(gen) {
   // we wrap everything in a promise to avoid promise chaining,
   // which leads to memory leak errors.
   // see https://github.com/tj/co/issues/180
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     if (typeof gen === 'function') gen = gen.apply(ctx, args);
     if (!gen || typeof gen.next !== 'function') return resolve(gen);
 
@@ -164,7 +164,7 @@ function arrayToPromise(obj) {
  * @api private
  */
 
-function objectToPromise(obj){
+function objectToPromise(obj) {
   var results = new obj.constructor();
   var keys = Object.keys(obj);
   var promises = [];
@@ -218,7 +218,7 @@ function isGenerator(obj) {
  * @return {Boolean}
  * @api private
  */
- 
+
 function isGeneratorFunction(obj) {
   var constructor = obj.constructor;
   if (!constructor) return false;
